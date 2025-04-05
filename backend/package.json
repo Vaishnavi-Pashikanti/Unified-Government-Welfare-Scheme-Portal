@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Welfare Schemes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaishnavi-Pashikanti/Unified-Government-Welfare-Scheme-Portal.git"
+  },
+  "author": "Team Meta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaishnavi-Pashikanti/Unified-Government-Welfare-Scheme-Portal/issues"
+  },
+  "homepage": "https://github.com/Vaishnavi-Pashikanti/Unified-Government-Welfare-Scheme-Portal#readme"
+}
