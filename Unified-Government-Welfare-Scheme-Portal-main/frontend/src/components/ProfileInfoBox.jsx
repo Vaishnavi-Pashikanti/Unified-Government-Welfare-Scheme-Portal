@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/UploadBox.css'
 
 const ProfileInfoBox = () => {
     // These would be fetched from backend based on logged-in user

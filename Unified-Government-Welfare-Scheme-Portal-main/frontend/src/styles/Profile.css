@@ -36,10 +36,11 @@
 }
 
 .profile-pic img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    border-radius: 20%;
     object-fit: cover;
+    margin-left: 80px;
 }
 
 .profile-info-box {
