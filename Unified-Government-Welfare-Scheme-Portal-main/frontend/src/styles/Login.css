@@ -1,0 +1,216 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-body {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVL_sC17xW6uOW2cFIcJLSz2t-hYEYw8rJ5w&s);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Login Container */
+.login-container {
+    width: 33vw;
+    max-width: 400px;
+    min-width: 280px;
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields with Icons */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 16px;
+}
+
+.ip {
+    width: 100%;
+    height: 40px;
+    padding: 8px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #98d3e2;
+}
+
+/* Password Eye Icon */
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+    color: gray;
+}
+
+.eye-icon:hover {
+    color: black;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    height: 40px;
+    color: white;
+    background-color: #98d3e2;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7eb8c7;
+}
+
+/* Remember Me & Forgot Password */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rem {
+    color: black;
+}
+
+.fp {
+    color: rgb(133, 134, 135);
+    cursor: pointer;
+}
+
+/* Social Divider */
+.socialDivider {
+    border-bottom: 1px solid #979faf;
+    line-height: .1em;
+    margin: 10px 0 20px;
+    text-align: center;
+    width: 80%;
+}
+
+.socialDivider span {
+    background-color: white;
+    color: rgb(133, 134, 135);
+    padding: 4px;
+}
+
+/* Social Login Icons */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    color: #2d4373;
+}
+
+/* No Account */
+.no-acc {
+    color: black;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium Devices - Tablets */
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .social-login {
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ip, button {
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+/* Small Devices - Mobile */
+@media screen and (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .ip {
+        height: 35px;
+    }
+
+    button {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .social-login {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .options {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .fp {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
