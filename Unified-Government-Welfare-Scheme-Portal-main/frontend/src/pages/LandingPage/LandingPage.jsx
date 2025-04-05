@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./LandingPage.css";
+import "../../styles/LandingPage.css"; 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import healthcareImg from "../assets/healthcare.jpeg";
-import farmersImg from "../assets/farmers.jpeg";
-import logo from "../assets/logo.png";
-import womenEntrepreneurImg from "../assets/women-entrepreneur.jpeg";
+import healthcareImg from "../../assets/healthcare.jpeg";
+import farmersImg from "../../assets/farmers.jpeg";
+import logo from "../../assets/logo.png";
+import womenEntrepreneurImg from "../../assets/women-entrepreneur.jpeg";
 
 const popularSchemes = [
   { id: 4, title: "Healthcare for All Initiative", eligibility: "All citizens", category: "Healthcare" },

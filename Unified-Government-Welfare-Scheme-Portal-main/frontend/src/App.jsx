@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import WelfarePortal from './components/LandingPage'  
+import WelfarePortal from './pages/LandingPage/LandingPage'  
 import './App.css'
 
 function App() {
