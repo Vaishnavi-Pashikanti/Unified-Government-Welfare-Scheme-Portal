@@ -32,8 +32,8 @@ const LandingPage = () => {
           <li><a href="">Contact Us</a></li>
         </ul>
         <ul className='log-list'>
-          <li><a href="">Login</a></li>
-          <li><a href="">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Register</a></li>
         </ul> 
       </nav>
 
