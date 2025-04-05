@@ -1,0 +1,297 @@
+/* --- Popular Schemes Section --- */
+
+.schemes-section {
+    padding: 60px 5%;
+    background-color: #f4f8fc;
+    text-align: center;
+  }
+  
+  .schemes-section h2 {
+    font-size: 2.5rem;
+    color: #002b5c;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  
+  .schemes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .scheme-card {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scheme-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #0077b6, #00b4d8);
+    transition: left 0.4s ease;
+  }
+  
+  .scheme-card:hover::before {
+    left: 0;
+  }
+  
+  .scheme-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .scheme-card h3 {
+    font-size: 1.3rem;
+    color: #00509d;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .scheme-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  
+  /* --- Carousel Section --- */
+  
+  .carousel-section {
+    padding: 40px 5%;
+    background: linear-gradient(to bottom, #ffffff, #e6f0ff);
+    margin-top: 60px;
+  }
+  
+  .scheme-slide {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .scheme-slide:hover {
+    transform: scale(1.02);
+  }
+  
+  .scheme-slide h3 {
+    color: #003366;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .scheme-slide p {
+    font-size: 1rem;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .scheme-slide img {
+    max-height: 350px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .apply-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .apply-btn:hover {
+    background-color: #005f8d;
+  }
+  
+  .explore-btn {
+    background-color: transparent;
+    color: #004080;
+    border: 2px solid #004080;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .explore-btn:hover {
+    background-color: #004080;
+    color: #fff;
+  }
+  
+  
+  /* --- Responsive Tweaks --- */
+  @media (max-width: 768px) {
+    .scheme-slide h3 {
+      font-size: 1.5rem;
+    }
+  
+    .scheme-card h3 {
+      font-size: 1.15rem;
+    }
+  
+    .apply-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  @media (max-width: 480px) {
+    .schemes-section h2 {
+      font-size: 2rem;
+    }
+  
+    .scheme-card {
+      padding: 20px 25px;
+    }
+  
+    .scheme-slide h3 {
+      font-size: 1.3rem;
+    }
+  
+    .scheme-card p {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .schemes-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  } 
+  
+  /* --- Navbar Styles --- */
+  nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #8b9297;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    
+  }
+  
+  nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+    font-size: 20px;
+  
+  } 
+  nav ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .logo {
+    height: 100%;
+    margin-top: 0px;
+  }
+  
+  /* --- Search & Filters Bar --- */
+  .search-filter-bar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    padding: 20px 5%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 90%;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: #fff;
+  }
+  
+  .search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .search-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  .filter-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+  }
+  
+  .filter-fields input,
+  .filter-fields select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    min-width: 150px;
+  }
+  
+  .apply-filter-btn {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-filter-btn:hover {
+    background-color: #005f8d;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-fields {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-filter-bar {
+      padding: 15px;
+    }
+  }
+  
+  
+  
