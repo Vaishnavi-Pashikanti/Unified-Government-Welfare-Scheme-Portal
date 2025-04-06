@@ -1,0 +1,42 @@
+.all-schemes-page {
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.scheme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* styles/SchemeCard.css */
+.scheme-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.card-buttons {
+    display: flex;
+    flex-direction: column; /* stack buttons vertically */
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .card-buttons button {
+    margin: 0; /* remove extra margin, we'll use gap instead */
+    padding: 8px 12px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%; /* optional: make buttons full width */
+  }

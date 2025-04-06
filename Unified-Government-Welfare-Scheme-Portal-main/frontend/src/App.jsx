@@ -6,6 +6,7 @@ import WelfarePortal from './pages/LandingPage/LandingPage';
 import HomePage from './pages/Home/Home';
 import './App.css';
 import ApplicationStatus from "./pages/ApplicationStatus/ApplicationStatus";
+import AllSchemesPage from "./pages/Schemes/Schemes";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/application" element={<ApplicationStatus />} />
+        <Route path="/schemes" element={<AllSchemesPage />} />
       </Routes>
     </Router>
   );
