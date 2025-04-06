@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../../styles/Signup.css";
 import { FaUser, FaEnvelope, FaEye, FaEyeSlash, FaLock,FaPhone, FaCity,FaBirthdayCake, FaTransgender } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom"; // ✅ import this
+  
 const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword((prev) => !prev);
@@ -15,11 +17,23 @@ const Signup = () => {
     const toggleConfirmPasswordVisibility = () => {
         setShowConfirmPassword((prev) => !prev);
     };
+    const handleSignup = (e) => {
+        e.preventDefault();
+    
+        // Basic password match check
+        if (password !== confirmPassword) {
+          alert("Passwords do not match");
+          return;
+        }
+    
+        console.log("Signup successful!");
+        navigate("/home"); 
+      };
 
     return (
         <div className="signup-body">
             <div className="signup-container">
-                <form className="signup-form">
+                <form className="signup-form" onSubmit={handleSignup}>
                     <h2>Create Account</h2>
 
                     <div className="name">
