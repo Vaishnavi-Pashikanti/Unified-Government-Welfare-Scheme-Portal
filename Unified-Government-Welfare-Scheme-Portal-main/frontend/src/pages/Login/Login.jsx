@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
+import axios from "axios";
 
 import "../../styles/Login.css";
 
@@ -9,15 +10,36 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-        console.log("Login successful! Navigating to Home...");
-        navigate("/home");
-    };
+    const [error, setError] = useState("");
 
     const togglePasswordVisibility = () => {
         setShowPassword((prev) => !prev);
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        setError("");
+
+        try {
+            const res = await axios.post("http://localhost:5000/api/users/login", {
+                username,
+                password,
+            });
+
+            if (res.data.success) {
+                console.log("✅ Login successful");
+                navigate("/home"); // Redirect on success
+            } else {
+                setError("❌ Invalid username or password");
+            }
+        } catch (err) {
+            console.error("Login error:", err);
+            if (err.response && err.response.data && err.response.data.message) {
+                setError(`❌ ${err.response.data.message}`);
+            } else {
+                setError("❌ Something went wrong. Try again.");
+            }
+        }
     };
 
     const handleGoogleLogin = () => {
@@ -30,7 +52,8 @@ const Login = () => {
                 <form className="login-form" onSubmit={handleLogin}>
                     <h2>Login</h2>
 
-                    {/* Username Input */}
+                    {error && <p className="error-message">{error}</p>}
+
                     <div className="input-container">
                         <FaUser className="input-icon" />
                         <input
@@ -43,7 +66,6 @@ const Login = () => {
                         />
                     </div>
 
-                    {/* Password Input */}
                     <div className="input-container">
                         <FaLock className="input-icon" />
                         <input
@@ -68,14 +90,12 @@ const Login = () => {
 
                     <button type="submit">Login</button>
 
-                    {/* Social Divider */}
                     <div className="socialDivider"><span>or</span></div>
 
                     <div className="social-login">
-                        <a href="/auth/google">
+                        <a onClick={handleGoogleLogin}>
                             <img src="/icons/google.png" alt="Google Login" className="social-icon" />
                         </a>
-
                     </div>
 
                     <p className="no-acc">
