@@ -1,43 +1,30 @@
 import express from 'express';
-import connectDB from './config/db.js';
-import authRoutes from './routes/auth.js';
-import schemeRoutes from './routes/schemes.js';
-import docRoutes from './routes/docs.js';
-import appRoutes from './routes/applications.js';
-import adminRoutes from './routes/admin.js';
-import reportRoutes from './routes/reports.js';
-import { auth } from './middleware/auth.js';
-import { adminAuth } from './middleware/adminAuth.js';
-import { rateLimiter } from './middleware/rateLimiter.js';
+import mongoose from 'mongoose';
 import cors from 'cors';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
-
-// Middleware
-app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
-app.use(cors({ origin: process.env.ADMIN_PANEL_ORIGIN }));
-
-// Database
-connectDB();
-
-// Public Routes
-app.use('/api/auth', rateLimiter, authRoutes);
-
-// Protected Routes
-app.use('/api/schemes', auth, schemeRoutes);
-app.use('/api/docs', auth, docRoutes);
-app.use('/api/applications', auth, appRoutes);
-
-// Admin Routes
-app.use('/api/admin', adminAuth, adminRoutes);
-app.use('/api/reports', adminAuth, reportRoutes);
-
-// Error Handling
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Server Error');
-});
-
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// 👇 Update DB name here
+const MONGO_URI = 'mongodb://127.0.0.1:27017/welfare-portal';
+
+// ✅ Middleware
+app.use(cors());
+app.use(express.json());
+
+// ✅ Routes
+app.use('/api/users', userRoutes);
+
+// ✅ MongoDB Connection
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log('✅ MongoDB connected to welfare_portal');
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('❌ MongoDB connection error:', err);
+    process.exit(1);
+  });
